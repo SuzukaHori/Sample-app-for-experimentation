@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+
+.memo-container {
+  display: inline-block;
+  width: 30%;
+  margin-top: 20px;
+  margin-right: 10px;
+}
+
+.memo-container.public {
+  background-color: rgb(156, 249, 249);
+}
+
+.memo-container.draft {
+  background-color: rgb(249, 156, 246);
+}

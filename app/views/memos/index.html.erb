@@ -1,14 +1,17 @@
 <p style="color: green"><%= notice %></p>
-
 <h1>Memos</h1>
-
+<%= form_with url: memos_path, method: :get do |form| %>
+  <%= search_field_tag :term, params[:term]%>
+  <%= submit_tag 'Search', name: nil %>
+<% end %>
 <div id="memos">
   <% @memos.each do |memo| %>
-    <%= render memo %>
-    <p>
-      <%= link_to "Show this memo", memo %>
-    </p>
+    <div class="memo-container <%= memo.draft ? "draft" : "public"%>">
+      <%= render memo %>
+      <p>
+        <%= link_to "Show this memo", memo %>
+      </p>
+    </div>
   <% end %>
 </div>
-
 <%= link_to "New memo", new_memo_path %>

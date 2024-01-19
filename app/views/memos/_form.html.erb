@@ -2,7 +2,6 @@
   <% if memo.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(memo.errors.count, "error") %> prohibited this memo from being saved:</h2>
-
       <ul>
         <% memo.errors.each do |error| %>
           <li><%= error.full_message %></li>
@@ -10,17 +9,18 @@
       </ul>
     </div>
   <% end %>
-
   <div>
     <%= form.label :user, style: "display: block" %>
     <%= form.text_field :user %>
   </div>
-
   <div>
-    <%= form.label :memo, style: "display: block" %>
-    <%= form.text_field :memo %>
+    <%= form.label :content, style: "display: block" %>
+    <%= form.text_field :content %>
   </div>
-
+  <div>
+    <%= form.label :draft, "下書きにする" %>
+    <%= form.check_box :draft %>
+  </div>
   <div>
     <%= form.submit %>
   </div>

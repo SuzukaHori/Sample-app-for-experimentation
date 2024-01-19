@@ -6,7 +6,12 @@
 
   <p>
     <strong>Memo:</strong>
-    <%= memo.memo %>
+    <%= memo.content %>
+  </p>
+
+  <p>
+    <strong>Status:</strong>
+    <%= memo.draft ? "下書き" : "公開" %>
   </p>
 
 </div>

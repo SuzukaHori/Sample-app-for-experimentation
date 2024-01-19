@@ -17,7 +17,7 @@ class MemosControllerTest < ActionDispatch::IntegrationTest
 
   test "should create memo" do
     assert_difference("Memo.count") do
-      post memos_url, params: { memo: { memo: @memo.memo, user: @memo.user } }
+      post memos_url, params: { memo: { memo: @memo.content, user: @memo.user } }
     end
 
     assert_redirected_to memo_url(Memo.last)
