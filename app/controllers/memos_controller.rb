@@ -3,10 +3,10 @@ class MemosController < ApplicationController
 
   # GET /memos or /memos.json
   def index
-    @memos = Memo.all # 1
+    # @memos = Memo.all # 1
     # @memos = Memo.where(draft: false) # 2
     # @memos = Memo.where(draft: false).where("content LIKE '%#{params[:term]}%'") # 3
-    # @memos = Memo.where(draft: false).where("content LIKE ?", "%#{params[:term]}%") # 4
+    @memos = Memo.where(draft: false).where("content LIKE ?", "%#{params[:term]}%") # 4
   end
 
   # GET /memos/1 or /memos/1.json
